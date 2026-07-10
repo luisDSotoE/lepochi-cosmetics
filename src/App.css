@@ -1,0 +1,50 @@
+:root {
+  /* Paleta de Colores Lepochi */
+  --color-pink: #F8BBD9;
+  --color-blue: #BEEBFF;
+  --color-lilac: #DCCBFF;
+  --color-white: #FFFFFF;
+  --color-accent-1: #FFE8F5;
+  --color-accent-2: #FFD9EC;
+  --color-accent-3: #EAF9FF;
+  --color-text-dark: #4A4A4A;
+  --color-text-light: #7A7A7A;
+
+  /* Tipografías */
+  --font-title: 'Fredoka', sans-serif;
+  --font-body: 'Nunito', sans-serif;
+  --font-accent: 'Poppins', sans-serif;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-body);
+  color: var(--color-text-dark);
+  /* Fondo con degradados suaves inspirados en la marca */
+  background: radial-gradient(circle at 15% 50%, var(--color-accent-1), transparent 50%),
+              radial-gradient(circle at 85% 30%, var(--color-accent-3), transparent 50%),
+              radial-gradient(circle at 50% 80%, var(--color-accent-2), transparent 50%);
+  background-color: var(--color-white);
+  background-attachment: fixed;
+  overflow-x: hidden;
+}
+
+/* Glassmorphism Reutilizable */
+.glass-panel {
+  background: rgba(255, 255, 255, 0.4);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.6);
+  box-shadow: 0 8px 32px 0 rgba(248, 187, 217, 0.15);
+  border-radius: 24px;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-title);
+  font-weight: 500;
+  letter-spacing: 0.5px;
+}
+
+button {
+  font-family: var(--font-accent);
+}

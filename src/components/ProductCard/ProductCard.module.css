@@ -1,0 +1,274 @@
+.card {
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;
+  position: relative;
+  overflow: hidden;
+  box-sizing: border-box;
+}
+
+.badges {
+  position: absolute;
+  top: 15px;
+  left: 15px;
+  display: flex;
+  gap: 0.5rem;
+  z-index: 2;
+}
+
+.badgeNew, .badgeDiscount {
+  font-size: 0.75rem;
+  font-weight: 700;
+  padding: 0.3rem 0.8rem;
+  border-radius: 12px;
+  color: var(--color-text-dark);
+}
+
+.badgeNew {
+  background-color: var(--color-blue);
+}
+
+.badgeDiscount {
+  background-color: var(--color-pink);
+}
+
+.imageContainer {
+  width: 100%;
+  aspect-ratio: 1;
+  border-radius: 16px;
+  overflow: hidden;
+  margin-bottom: 1rem;
+  background-color: var(--color-white);
+}
+
+.image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+.card:hover .image {
+  transform: scale(1.08);
+}
+
+.info {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.category {
+  font-size: 0.8rem;
+  color: var(--color-text-light);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 0.3rem;
+}
+
+.name {
+  font-size: 1.1rem;
+  color: var(--color-text-dark);
+  margin: 0 0 0.8rem 0;
+  font-weight: 600;
+}
+
+.priceContainer {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  margin-bottom: 1.2rem;
+  margin-top: auto;
+}
+
+.price {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: var(--color-text-dark);
+}
+
+.oldPrice {
+  font-size: 0.9rem;
+  color: var(--color-text-light);
+  text-decoration: line-through;
+}
+
+.actions {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.btnCart {
+  flex-grow: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  background-color: var(--color-text-dark);
+  color: var(--color-white);
+  border: none;
+  padding: 0.8rem;
+  border-radius: 12px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.btnDetails {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--color-accent-1);
+  color: var(--color-text-dark);
+  border: none;
+  padding: 0.8rem;
+  border-radius: 12px;
+  font-size: 1.2rem;
+  cursor: pointer;
+}
+/* ========================================= */
+/* ====== ESTILOS DEL MODAL (VISTA RÁPIDA) ====== */
+/* ========================================= */
+
+.modalOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(5px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 99999; /* ¡Por encima de todo! */
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.modalContent {
+  background: white;
+  border-radius: 20px;
+  width: 100%;
+  max-width: 800px;
+  max-height: 90vh;
+  overflow-y: auto;
+  position: relative;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+.modalCloseBtn {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  background: rgba(248, 187, 217, 0.3);
+  border: none;
+  border-radius: 50%;
+  width: 35px;
+  height: 35px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.2rem;
+  cursor: pointer;
+  color: #333;
+  z-index: 10;
+  transition: all 0.3s ease;
+}
+
+.modalCloseBtn:hover {
+  background: #ff6b9d;
+  color: white;
+  transform: rotate(90deg);
+}
+
+.modalGrid {
+  display: flex;
+  flex-direction: column;
+}
+
+/* En pantallas grandes (PC/Tablets), mostramos la imagen a la izquierda y el texto a la derecha */
+@media (min-width: 768px) {
+  .modalGrid {
+    flex-direction: row;
+  }
+}
+
+.modalImageContainer {
+  flex: 1;
+  background: #fffafa;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 30px;
+}
+
+.modalImage {
+  width: 100%;
+  max-width: 300px;
+  border-radius: 10px;
+  object-fit: cover;
+}
+
+.modalInfo {
+  flex: 1;
+  padding: 40px 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.modalName {
+  font-size: 1.8rem;
+  color: #333;
+  margin: 10px 0;
+  line-height: 1.2;
+}
+
+.modalPriceContainer {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 20px;
+}
+
+.modalPrice {
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: #ff6b9d;
+}
+
+.modalOldPrice {
+  font-size: 1.2rem;
+  color: #999;
+  text-decoration: line-through;
+}
+
+.modalDescription {
+  font-size: 1rem;
+  color: #666;
+  line-height: 1.6;
+  margin-bottom: 30px;
+}
+
+.modalAddToCart {
+  background: #ff6b9d;
+  color: white;
+  border: none;
+  padding: 15px 20px;
+  border-radius: 30px;
+  font-size: 1.1rem;
+  font-weight: bold;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  transition: all 0.3s ease;
+  width: 100%;
+}
+
+.modalAddToCart:hover {
+  background: #f05286;
+  transform: translateY(-3px);
+  box-shadow: 0 5px 15px rgba(255, 107, 157, 0.4);
+}

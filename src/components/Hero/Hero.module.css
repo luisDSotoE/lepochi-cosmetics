@@ -1,0 +1,92 @@
+.heroSection {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.container {
+  display: flex;
+  max-width: 1200px;
+  width: 100%;
+  align-items: center;
+  gap: 3rem;
+  flex-wrap: wrap;
+}
+
+.textContent {
+  flex: 1;
+  min-width: 300px;
+  text-align: left;
+}
+
+.textContent h1 {
+  font-size: 3.5rem;
+  line-height: 1.2;
+  margin-bottom: 1rem;
+  color: var(--color-text-dark); 
+}
+.highlight {
+  color: #d18ab1; /* Un rosa ligeramente más oscuro para contraste en texto */
+  font-weight: 600;
+}
+
+.textContent p {
+  font-size: 1.2rem;
+  color: var(--color-text-light);
+  margin-bottom: 2rem;
+}
+
+.buttons {
+  display: flex;
+  gap: 1rem;
+}
+
+.btn {
+  padding: 0.8rem 1.8rem;
+  border-radius: 30px;
+  border: none;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.btnPrimary {
+  background-color: var(--color-pink);
+  color: var(--color-text-dark);
+  box-shadow: 0 4px 15px rgba(248, 187, 217, 0.4);
+}
+
+.btnSecondary {
+  background-color: transparent;
+  color: var(--color-text-dark);
+}
+
+.imageContent {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  min-width: 300px;
+}
+
+
+
+.floatingStar {
+  position: absolute;
+  top: 15%;
+  left: 10%;
+  font-size: 2rem;
+}
+
+.heroImg {
+  width: 100%;
+  max-width: 300px; /* Ajusta este tamaño según tu imagen */
+  height: auto;
+  object-fit: contain;
+  /* Le agregamos una sombra rosada para que resalte más */
+  filter: drop-shadow(0px 15px 25px rgba(248, 187, 217, 0.4));
+  z-index: 2;
+}

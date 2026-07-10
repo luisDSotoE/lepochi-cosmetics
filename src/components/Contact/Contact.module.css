@@ -1,0 +1,63 @@
+.contactSection {
+  padding: 80px 20px;
+  background: linear-gradient(to bottom, #ffffff, #fff0f5);
+  text-align: center;
+}
+
+.header {
+  margin-bottom: 50px;
+}
+
+.header h2 {
+  font-size: 2.5rem;
+  color: #333;
+}
+
+.header h2 span {
+  color: #ff6b9d;
+}
+
+.contactCards {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  flex-wrap: wrap;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.card {
+  background: white;
+  padding: 30px;
+  border-radius: 20px;
+  width: 250px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+  text-decoration: none;
+  color: #333;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+  transition: all 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 35px rgba(255, 107, 157, 0.2);
+}
+
+.icon {
+  font-size: 3rem;
+  color: #ff6b9d;
+}
+
+.card h3 {
+  font-size: 1.3rem;
+  margin: 0;
+}
+
+.card p {
+  color: #777;
+  margin: 0;
+  font-size: 0.95rem;
+}

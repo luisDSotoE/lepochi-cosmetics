@@ -1,0 +1,148 @@
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.5rem 4rem;
+  z-index: 1000;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  background: transparent;
+  box-sizing: border-box;
+}
+
+/* Efecto de Scroll (Glassmorphism) */
+.scrolled {
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  box-shadow: 0 4px 30px rgba(248, 187, 217, 0.2);
+  padding: 1rem 4rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+.logoImg {
+  height: 60px; /* Puedes subir o bajar este número si lo quieres más grande o pequeño */
+  width: auto;
+  object-fit: contain;
+  border-radius: 50%; /* Opcional: Esto lo hace circular, se verá muy lindo con tu diseño */
+}
+
+.logoImage:hover {
+  transform: scale(1.05);
+}
+
+.navLinks {
+  display: flex;
+  list-style: none;
+  gap: 2.5rem;
+  margin: 0;
+  padding: 0;
+}
+
+.navLinks a {
+  text-decoration: none;
+  color: var(--color-text-dark);
+  font-family: var(--font-accent);
+  font-weight: 500;
+  font-size: 1rem;
+  transition: color 0.3s ease;
+  position: relative;
+}
+
+/* Subrayado animado al hacer hover */
+.navLinks a::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: -4px;
+  left: 0;
+  background-color: var(--color-pink);
+  transition: width 0.3s ease;
+}
+
+.navLinks a:hover {
+  color: var(--color-pink);
+}
+
+.navLinks a:hover::after {
+  width: 100%;
+}
+
+.actions {
+  display: flex;
+  align-items: center;
+  gap: 1.8rem;
+}
+
+.socialIcons {
+  display: flex;
+  gap: 1rem;
+}
+
+.socialIcons a {
+  color: var(--color-text-light);
+  font-size: 1.3rem;
+  transition: all 0.3s ease;
+  display: flex;
+}
+
+.socialIcons a:hover {
+  color: var(--color-pink);
+  transform: translateY(-3px);
+}
+
+.cartContainer {
+  position: relative;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  transition: transform 0.2s ease;
+}
+
+.cartContainer:hover {
+  transform: scale(1.1);
+}
+
+.cartIcon {
+  font-size: 1.5rem;
+  color: var(--color-text-dark);
+}
+
+.cartBadge {
+  position: absolute;
+  top: -8px;
+  right: -10px;
+  background-color: var(--color-pink);
+  color: var(--color-text-dark);
+  font-size: 0.75rem;
+  font-weight: 700;
+  font-family: var(--font-accent);
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 5px rgba(248, 187, 217, 0.5);
+}
+
+.btnDestacado {
+  background-color: var(--color-pink);
+  color: var(--color-text-dark);
+  border: none;
+  padding: 0.7rem 1.8rem;
+  border-radius: 30px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+}

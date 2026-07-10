@@ -1,0 +1,76 @@
+.categoriesSection {
+  padding: 60px 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.header h2 {
+  font-size: 2.2rem;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.header h2 span {
+  color: #ff6b9d;
+}
+
+.header p {
+  color: #666;
+  margin-bottom: 40px;
+}
+
+.categoriesContainer {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.categoryCard {
+  background: white;
+  border-radius: 20px;
+  padding: 15px;
+  width: 120px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+  transition: all 0.3s ease;
+  border: 2px solid transparent;
+}
+
+.categoryCard.active {
+  border-color: #ff6b9d;
+  background: #fff0f5;
+  box-shadow: 0 8px 25px rgba(255, 107, 157, 0.2);
+}
+
+.imageWrapper {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  overflow: hidden;
+  background: #f8f8f8;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.categoryImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.categoryName {
+  font-weight: bold;
+  color: #555;
+  font-size: 0.95rem;
+}
+
+.categoryCard.active .categoryName {
+  color: #ff6b9d;
+}
