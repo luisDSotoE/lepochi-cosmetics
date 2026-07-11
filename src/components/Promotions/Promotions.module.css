@@ -121,3 +121,102 @@
     font-size: 2rem;
   }
 }
+.promoSection {
+  padding: 40px 20px;
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.sliderContainer {
+  position: relative;
+  min-height: 280px; 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.promoCard {
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.8);
+  padding: 35px 25px;
+  border-radius: 24px;
+  box-shadow: 0 10px 30px rgba(248, 187, 217, 0.3);
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px; /* Controla el espaciado ordenadamente */
+}
+
+.tag {
+  background: #ff6b9d;
+  color: white;
+  padding: 5px 15px;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  font-weight: bold;
+}
+
+.titulo {
+  font-size: 2rem;
+  color: #333;
+  margin: 0;
+  line-height: 1.2;
+}
+
+.descripcion {
+  color: #666;
+  font-size: 1rem;
+  margin: 0;
+  max-width: 500px;
+  line-height: 1.5;
+}
+
+.btnAction {
+  background: #444;
+  color: white;
+  border: none;
+  padding: 12px 30px;
+  border-radius: 12px;
+  font-size: 1rem;
+  cursor: pointer;
+  margin-top: 10px;
+  transition: background 0.3s;
+}
+
+.btnAction:hover {
+  background: #222;
+}
+
+.dots {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 15px;
+}
+
+.dot {
+  width: 10px;
+  height: 10px;
+  background: #e0e0e0;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.dotActive {
+  background: #ff6b9d;
+  width: 20px;
+  border-radius: 10px;
+}
+
+@media (max-width: 480px) {
+  .titulo {
+    font-size: 1.6rem;
+  }
+  .descripcion {
+    font-size: 0.95rem;
+  }
+}
