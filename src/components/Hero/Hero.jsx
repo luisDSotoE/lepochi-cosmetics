@@ -3,10 +3,26 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import styles from './Hero.module.css'; // Usando CSS Modules
 
-
 const Hero = () => {
+
+  // Función para hacer scroll suave a las secciones
+  const scrollToSection = (id) => {
+    const element = document.getElementById(id);
+    if (element) {
+      // Ajustamos un poco la posición para que el navbar no tape el título
+      const offset = 80; 
+      const elementPosition = element.getBoundingClientRect().top;
+      const offsetPosition = elementPosition + window.pageYOffset - offset;
+  
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: "smooth"
+      });
+    }
+  };
+
   return (
-    <section className={styles.heroSection}>
+    <section className={styles.heroSection} id="inicio">
       {/* Elementos decorativos flotantes */}
       <motion.div 
         className={styles.floatingStar}
@@ -46,18 +62,22 @@ const Hero = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.6, duration: 0.8 }}
           >
+            {/* BOTÓN 1: COMPRAR AHORA -> Va a Productos */}
             <motion.button 
               whileHover={{ scale: 1.05, boxShadow: "0px 0px 15px rgba(248, 187, 217, 0.5)" }}
               whileTap={{ scale: 0.95 }}
               className={`${styles.btn} ${styles.btnPrimary}`}
+              onClick={() => scrollToSection('productos')}
             >
               Comprar ahora
             </motion.button>
             
+            {/* BOTÓN 2: VER CATÁLOGO -> Va a Categorías */}
             <motion.button 
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
               className={`${styles.btn} ${styles.btnSecondary} glass-panel`}
+              onClick={() => scrollToSection('categorias')}
             >
               Ver catálogo
             </motion.button>
