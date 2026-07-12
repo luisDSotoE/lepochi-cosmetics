@@ -3,9 +3,8 @@ import { CartContext } from '../../context/CartContext';
 import styles from './Cart.module.css';
 
 const Cart = ({ isOpen, onClose }) => {
-  const { cart, removeFromCart } = useContext(CartContext);
-
-  const total = cart.reduce((suma, item) => suma + item.precio, 0);
+  // Extraemos updateQuantity y total directamente del contexto
+  const { cart, removeFromCart, updateQuantity, total } = useContext(CartContext);
 
   const handleWhatsAppCheckout = () => {
     const numeroWhatsApp = "573123198725"; 
@@ -13,7 +12,8 @@ const Cart = ({ isOpen, onClose }) => {
     let mensaje = "✨ *¡Hola Lepochi Cosmetics!* ✨\n\nMe encantaría hacer el siguiente pedido:\n\n";
     
     cart.forEach((item) => {
-      mensaje += `🛍️ ${item.nombre} - $${item.precio.toLocaleString('es-CO')}\n`;
+      // Ahora muestra la cantidad y el precio multiplicado por esa cantidad
+      mensaje += `🛍️ ${item.cantidad}x ${item.nombre} - $${(item.precio * item.cantidad).toLocaleString('es-CO')}\n`;
     });
     
     mensaje += `\n💰 *Total a pagar: $${total.toLocaleString('es-CO')}*`;
@@ -50,10 +50,31 @@ const Cart = ({ isOpen, onClose }) => {
             cart.map((item, index) => (
               <div key={index} className={styles.cartItem}>
                 <img src={item.imagen} alt={item.nombre} className={styles.itemImage} />
+                
                 <div className={styles.itemInfo}>
                   <h4>{item.nombre}</h4>
-                  <p>${item.precio.toLocaleString('es-CO')}</p>
+                  {/* Mostramos el precio total de ese ítem según su cantidad */}
+                  <p>${(item.precio * item.cantidad).toLocaleString('es-CO')}</p>
+                  
+                  {/* ====== NUEVO: Controles de Cantidad ====== */}
+                  <div className={styles.quantityControls}>
+                    <button 
+                      className={styles.qtyBtn} 
+                      onClick={() => updateQuantity(item.id, item.cantidad - 1)}
+                      disabled={item.cantidad <= 1}
+                    >
+                      -
+                    </button>
+                    <span className={styles.qtySpan}>{item.cantidad}</span>
+                    <button 
+                      className={styles.qtyBtn} 
+                      onClick={() => updateQuantity(item.id, item.cantidad + 1)}
+                    >
+                      +
+                    </button>
+                  </div>
                 </div>
+
                 <button 
                   className={styles.deleteBtn}
                   onClick={() => removeFromCart(item.id)}

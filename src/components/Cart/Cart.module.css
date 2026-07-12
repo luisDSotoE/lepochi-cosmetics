@@ -153,3 +153,47 @@
 .checkoutBtn:hover {
   background: #f05286;
 }
+
+/* ====== NUEVO: CONTROLES DE CANTIDAD ====== */
+.quantityControls {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-top: 8px;
+  background: #FFE8F5; /* Color acento rosadito */
+  width: fit-content;
+  border-radius: 20px;
+  padding: 4px 12px;
+  border: 1px solid #F8BBD9;
+}
+
+.qtyBtn {
+  background: none;
+  border: none;
+  font-size: 1.2rem;
+  color: #4A4A4A;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  transition: color 0.2s, transform 0.1s;
+}
+
+.qtyBtn:hover:not(:disabled) {
+  color: #ff6b9d;
+  transform: scale(1.1);
+}
+
+.qtyBtn:disabled {
+  color: #ccc;
+  cursor: not-allowed;
+}
+
+.qtySpan {
+  font-weight: bold;
+  font-size: 0.95rem;
+  color: #333;
+  min-width: 15px;
+  text-align: center;
+}
