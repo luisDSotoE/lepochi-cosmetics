@@ -4,9 +4,12 @@
   --color-blue: #BEEBFF;
   --color-lilac: #DCCBFF;
   --color-white: #FFFFFF;
-  --color-accent-1: #FFE8F5;
-  --color-accent-2: #FFD9EC;
-  --color-accent-3: #EAF9FF;
+  
+  /* ====== ACENTOS MÁS VIBRANTES ====== */
+  --color-accent-1: #FFCBE6; /* Rosa más intenso para la izquierda */
+  --color-accent-2: #FFA3D0; /* Rosa profundo para la parte inferior */
+  --color-accent-3: #BDE8FF; /* Azul Lepochi brillante para la derecha */
+  
   --color-text-dark: #4A4A4A;
   --color-text-light: #7A7A7A;
 
@@ -16,7 +19,7 @@
   --font-accent: 'Poppins', sans-serif;
 }
 
-/* ====== REGLA DE ORO PARA EVITAR DESBORDAMIENTOS EN MÓVILES ====== */
+/* ====== REGLA DE ORO PARA EVITAR DESBORDAMIENTOS ====== */
 html, body {
   max-width: 100%;
   overflow-x: hidden;
@@ -27,11 +30,13 @@ html, body {
 body {
   font-family: var(--font-body);
   color: var(--color-text-dark);
-  /* Fondo con degradados suaves inspirados en la marca */
-  background: radial-gradient(circle at 15% 50%, var(--color-accent-1), transparent 50%),
-              radial-gradient(circle at 85% 30%, var(--color-accent-3), transparent 50%),
-              radial-gradient(circle at 50% 80%, var(--color-accent-2), transparent 50%);
-  background-color: var(--color-white);
+  
+  /* ====== NUEVO FONDO MÁS COLORIDO ====== */
+  /* Cambiamos 'transparent 50%' por '70%' para que los colores se expandan más */
+  background: radial-gradient(circle at 10% 30%, var(--color-accent-1), transparent 70%),
+              radial-gradient(circle at 90% 20%, var(--color-accent-3), transparent 70%),
+              radial-gradient(circle at 50% 90%, var(--color-accent-2), transparent 70%);
+  background-color: #FCFCFC; /* Un blanco ligeramente apagado para que resalten los gradientes */
   background-attachment: fixed;
 }
 
