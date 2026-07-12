@@ -16,8 +16,15 @@
   --font-accent: 'Poppins', sans-serif;
 }
 
-body {
+/* ====== REGLA DE ORO PARA EVITAR DESBORDAMIENTOS EN MÓVILES ====== */
+html, body {
+  max-width: 100%;
+  overflow-x: hidden;
   margin: 0;
+  padding: 0;
+}
+
+body {
   font-family: var(--font-body);
   color: var(--color-text-dark);
   /* Fondo con degradados suaves inspirados en la marca */
@@ -26,7 +33,6 @@ body {
               radial-gradient(circle at 50% 80%, var(--color-accent-2), transparent 50%);
   background-color: var(--color-white);
   background-attachment: fixed;
-  overflow-x: hidden;
 }
 
 /* Glassmorphism Reutilizable */
