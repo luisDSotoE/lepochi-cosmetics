@@ -5,10 +5,11 @@ import Hero from './components/Hero/Hero';
 import Promotions from './components/Promotions/Promotions';
 import Categories from './components/Categories/Categories';
 import ProductGrid from './components/ProductGrid/ProductGrid';
+import TikTokFeed from './components/SocialFeed/TikTokFeed'; // <-- 1. Importamos el nuevo componente
 import About from './components/About/About';
 import Contact from './components/Contact/Contact';
 import Cart from './components/Cart/Cart';
-import Loader from './components/Loader/Loader'; // Importamos el nuevo Loader
+import Loader from './components/Loader/Loader'; // Importamos el Loader
 import './App.css'; 
 
 function App() {
@@ -49,6 +50,10 @@ function App() {
         <ProductGrid 
           categoriaSeleccionada={categoriaSeleccionada} 
         />
+        
+        {/* 2. Inyectamos la sección de TikTok aquí */}
+        <TikTokFeed />
+        
         <About />
         <Contact />
       </main>
