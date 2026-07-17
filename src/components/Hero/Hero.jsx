@@ -92,7 +92,7 @@ const Hero = () => {
         >
           {/* Aquí irá tu imagen principal, mientras tanto un placeholder con glassmorphism */}
           <motion.img 
-            src="/assets/images/hero-image.jpg" 
+            src="/assets/images/hero-image.png" 
             alt="Maquillaje Lepochi" 
             className={styles.heroImg}
             initial={{ y: 20 }}

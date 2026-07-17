@@ -1,3 +1,6 @@
+/* =========================================
+   ESTILOS GENERALES (Escritorio)
+   ========================================= */
 .heroSection {
   min-height: 100vh;
   display: flex;
@@ -5,32 +8,34 @@
   justify-content: center;
   padding: 2rem;
   position: relative;
-  overflow: hidden;
+  overflow: hidden; /* Evita que cualquier elemento sobresalga y cree scroll horizontal */
+  box-sizing: border-box;
 }
 
 .container {
   display: flex;
-  max-width: 1200px;
+  max-width: 1400px; /* Ancho amplio para que la imagen luzca */
   width: 100%;
   align-items: center;
-  gap: 3rem;
-  flex-wrap: wrap;
+  gap: 2rem;
+  box-sizing: border-box;
 }
 
 .textContent {
   flex: 1;
-  min-width: 300px;
   text-align: left;
+  /* Quitamos el min-width para que sea 100% fluido */
 }
 
 .textContent h1 {
-  font-size: 3.5rem;
+  font-size: 3.8rem;
   line-height: 1.2;
   margin-bottom: 1rem;
   color: var(--color-text-dark); 
 }
+
 .highlight {
-  color: #d18ab1; /* Un rosa ligeramente más oscuro para contraste en texto */
+  color: #d18ab1; 
   font-weight: 600;
 }
 
@@ -43,6 +48,7 @@
 .buttons {
   display: flex;
   gap: 1rem;
+  flex-wrap: wrap; /* Si la pantalla se achica, los botones pasan a la línea de abajo sin romperse */
 }
 
 .btn {
@@ -52,6 +58,7 @@
   font-size: 1rem;
   font-weight: 600;
   cursor: pointer;
+  white-space: nowrap; /* Evita que el texto del botón se parta en dos líneas */
 }
 
 .btnPrimary {
@@ -66,13 +73,11 @@
 }
 
 .imageContent {
-  flex: 1;
+  flex: 1.6; /* Sigue teniendo más protagonismo que el texto */
   display: flex;
   justify-content: center;
-  min-width: 300px;
+  width: 100%;
 }
-
-
 
 .floatingStar {
   position: absolute;
@@ -83,10 +88,72 @@
 
 .heroImg {
   width: 100%;
-  max-width: 300px; /* Ajusta este tamaño según tu imagen */
+  max-width: 850px; 
   height: auto;
-  object-fit: contain;
-  /* Le agregamos una sombra rosada para que resalte más */
+  object-fit: cover;
+  border-radius: 15px;
   filter: drop-shadow(0px 15px 25px rgba(248, 187, 217, 0.4));
   z-index: 2;
+  /* Quitamos el transform: scale() porque es el culpable de romper el diseño en móviles */
+}
+
+
+/* =========================================
+   DISEÑO RESPONSIVO (Tablets - hasta 992px) 
+   ========================================= */
+@media (max-width: 992px) { 
+  .heroSection {
+    min-height: auto; 
+    padding-top: 120px; /* Damos espacio para que el menú de navegación no tape el título */
+    padding-bottom: 4rem;
+  }
+  
+  .container {
+    flex-direction: column; /* Apilamos contenido (Texto arriba, imagen abajo) */
+    text-align: center;
+    gap: 3rem;
+  }
+
+  .textContent {
+    text-align: center;
+    width: 100%;
+  }
+
+  .buttons {
+    justify-content: center; /* Centramos los botones */
+  }
+}
+
+
+/* =========================================
+   DISEÑO RESPONSIVO (Celulares - hasta 576px) 
+   ========================================= */
+@media (max-width: 576px) { 
+  .heroSection {
+    padding: 1.5rem;
+    padding-top: 100px;
+  }
+
+  .textContent h1 {
+    font-size: 2.5rem; /* Achicamos el título para que quepa bien en pantallas pequeñas */
+  }
+
+  .textContent p {
+    font-size: 1rem;
+  }
+
+  .buttons {
+    flex-direction: column; /* Apilamos los botones uno debajo del otro */
+    width: 100%;
+    align-items: center;
+  }
+
+  .btn {
+    width: 100%; /* Hacemos que los botones ocupen todo el ancho del celular */
+    max-width: 320px; /* Pero con un límite para que no se vean gigantes */
+  }
+
+  .heroImg {
+    max-width: 100%; /* La imagen tomará exactamente el ancho del celular sin desbordarse */
+  }
 }
