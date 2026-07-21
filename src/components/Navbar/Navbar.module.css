@@ -32,8 +32,8 @@
 
 .logoImg {
   height: 50px;
-  width: auto;
-  object-fit: contain;
+  width: 50px; /* Ajustado para que sea igual al alto */
+  object-fit: cover; /* Cambiado de contain a cover para llenar el círculo */
   border-radius: 50%;
 }
 
@@ -121,6 +121,8 @@
   .navbar {
     padding: 0 12px;
     height: 60px;
+    justify-content: flex-start; /* Alinea todo a la izquierda */
+    gap: 15px; /* Espacio entre las 3 rayitas y el logo */
   }
 
   .menuToggle {
@@ -139,29 +141,32 @@
 
   .logo {
     max-width: 100px;
+    margin: 0; /* Asegura que no tenga márgenes extraños */
   }
 
   .logoImg {
     height: 38px;
+    width: 38px; 
   }
 
-  /* ACCIONES EN MÓVIL: Mantiene redes y carrito alineados */
+  /* ACCIONES EN MÓVIL */
   .actions {
     display: flex;
     align-items: center;
-    gap: 10px; /* Espacio cómodo entre redes y carrito */
+    gap: 10px; 
     width: auto;
+    margin-left: auto; /* ¡Este es el truco! Empuja esto a la derecha y deja el logo a la izquierda */
   }
 
   /* REDES SOCIALES VISIBLES EN MÓVIL */
   .socialIcons {
     display: flex !important;
     align-items: center;
-    gap: 8px; /* Espaciado compacto para pantallas estrechas */
+    gap: 8px; 
   }
 
   .socialIcons a {
-    font-size: 1.1rem; /* Tamaño proporcional para móvil */
+    font-size: 1.1rem; 
     color: #555;
   }
 
