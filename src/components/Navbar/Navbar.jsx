@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useContext } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
+import { motion } from 'framer-motion';
 import { FiShoppingCart, FiInstagram, FiMenu, FiX } from 'react-icons/fi';
 import { FaTiktok, FaWhatsapp } from 'react-icons/fa';
 import { CartContext } from '../../context/CartContext';
@@ -7,7 +7,7 @@ import styles from './Navbar.module.css';
 
 const Navbar = ({ onOpenCart }) => {
   const [isScrolled, setIsScrolled] = useState(false);
-  const [isMenuOpen, setIsMenuOpen] = useState(false); // Estado para abrir/cerrar menú móvil
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
   const { totalItems } = useContext(CartContext);
 
   useEffect(() => {
@@ -49,7 +49,7 @@ const Navbar = ({ onOpenCart }) => {
         />
       </div>
 
-      {/* Enlaces Principales (Con clase dinámica para móvil) */}
+      {/* Enlaces Principales */}
       <ul className={`${styles.navLinks} ${isMenuOpen ? styles.navLinksOpen : ''}`}>
         <li><a href="#inicio" onClick={scrollToTop}>Inicio</a></li>
         <li><a href="#productos" onClick={() => setIsMenuOpen(false)}>Productos</a></li>
@@ -61,9 +61,9 @@ const Navbar = ({ onOpenCart }) => {
       {/* Acciones y Redes */}
       <div className={styles.actions}>
         <div className={styles.socialIcons}>
-          <a href="https://instagram.com/lepochi_cosmetics" target="_blank" rel="noreferrer"><FiInstagram /></a>
-          <a href="https://tiktok.com/@lepochi_cosmetics" target="_blank" rel="noreferrer"><FaTiktok /></a>
-          <a href="https://wa.me/573123198725" target="_blank" rel="noreferrer"><FaWhatsapp /></a>
+          <a href="https://instagram.com/lepochi_cosmetics" target="_blank" rel="noreferrer" aria-label="Instagram"><FiInstagram /></a>
+          <a href="https://tiktok.com/@lepochi_cosmetics" target="_blank" rel="noreferrer" aria-label="TikTok"><FaTiktok /></a>
+          <a href="https://wa.me/573123198725" target="_blank" rel="noreferrer" aria-label="WhatsApp"><FaWhatsapp /></a>
         </div>
 
         <div className={styles.cartContainer} onClick={onOpenCart} style={{ cursor: 'pointer' }}>

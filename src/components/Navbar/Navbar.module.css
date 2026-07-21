@@ -12,7 +12,7 @@
   align-items: center;
   justify-content: space-between;
   padding: 0 30px;
-  box-sizing: border-box; /* Evita que el padding estire el ancho total */
+  box-sizing: border-box;
   z-index: 999;
   transition: all 0.3s ease;
   box-shadow: 0 2px 20px rgba(0, 0, 0, 0.05);
@@ -67,17 +67,21 @@
 
 .socialIcons {
   display: flex;
+  align-items: center;
   gap: 15px;
 }
 
 .socialIcons a {
   color: #666;
   font-size: 1.2rem;
-  transition: color 0.3s;
+  display: flex;
+  align-items: center;
+  transition: color 0.3s, transform 0.2s;
 }
 
 .socialIcons a:hover {
   color: #ff6b9d;
+  transform: translateY(-2px);
 }
 
 /* CARRITO */
@@ -115,40 +119,54 @@
 /* ====== ADAPTACIÓN TOTAL PARA CELULARES (RESPONSIVE) ====== */
 @media (max-width: 768px) {
   .navbar {
-    padding: 0 15px; /* Padding controlado para que no empuje el contenido */
+    padding: 0 12px;
     height: 60px;
   }
 
   .menuToggle {
-    display: block;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     background: none;
     border: none;
-    font-size: 1.6rem;
+    font-size: 1.5rem;
     color: #333;
     cursor: pointer;
     padding: 0;
     z-index: 1001;
-    width: 30px; /* Tamaño fijo para equilibrar el espacio */
+    width: 28px;
   }
 
   .logo {
-    max-width: 120px;
-    justify-content: center;
+    max-width: 100px;
   }
 
   .logoImg {
-    height: 42px;
+    height: 38px;
   }
 
-  /* El carrito ocupa un ancho controlado a la derecha */
+  /* ACCIONES EN MÓVIL: Mantiene redes y carrito alineados */
   .actions {
-    gap: 0;
-    width: 30px; 
-    justify-content: flex-end;
+    display: flex;
+    align-items: center;
+    gap: 10px; /* Espacio cómodo entre redes y carrito */
+    width: auto;
   }
 
+  /* REDES SOCIALES VISIBLES EN MÓVIL */
   .socialIcons {
-    display: none; /* Escondemos redes en celular para evitar amontonamientos */
+    display: flex !important;
+    align-items: center;
+    gap: 8px; /* Espaciado compacto para pantallas estrechas */
+  }
+
+  .socialIcons a {
+    font-size: 1.1rem; /* Tamaño proporcional para móvil */
+    color: #555;
+  }
+
+  .cartIcon {
+    font-size: 1.35rem;
   }
 
   /* MENÚ DESPLEGABLE LATERAL */
